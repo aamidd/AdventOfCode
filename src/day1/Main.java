@@ -28,7 +28,6 @@ public class Main {
                 .replaceAll("\\D+", "");
 
         String firstAndLast = String.valueOf(digits.charAt(0)) + digits.charAt(digits.length() - 1);
-        System.out.printf("%s -> %s = %s%n", line, digits, firstAndLast);
         return Integer.parseInt(firstAndLast);
     }
 }
