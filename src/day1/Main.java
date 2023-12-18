@@ -16,15 +16,15 @@ public class Main {
     }
 
     private static int firstAndLast(String line) {
-        String digits = line.replaceAll("one", "one1one")
-                .replaceAll("two", "two2two")
-                .replaceAll("three", "three3three")
-                .replaceAll("four", "four4four")
-                .replaceAll("five", "five5five")
-                .replaceAll("six", "six6six")
-                .replaceAll("seven", "seven7seven")
-                .replaceAll("eight", "eight8eight")
-                .replaceAll("nine", "nine9nine")
+        String digits = line.replaceAll("one", "o1e")
+                .replaceAll("two", "t2o")
+                .replaceAll("three", "t3e")
+                .replaceAll("four", "f4r")
+                .replaceAll("five", "f5e")
+                .replaceAll("six", "s6x")
+                .replaceAll("seven", "s7n")
+                .replaceAll("eight", "e8t")
+                .replaceAll("nine", "n9e")
                 .replaceAll("\\D+", "");
 
         String firstAndLast = String.valueOf(digits.charAt(0)) + digits.charAt(digits.length() - 1);
