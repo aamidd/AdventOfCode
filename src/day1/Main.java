@@ -20,7 +20,7 @@ public class Main {
                         .sum();
 
         System.out.printf("answer to part one: %d // part one only asked to give the first and last occurrence of digits " +
-                "%nanswer to part two: %d // part two asked to include the numbers written in words too%n", partOneSum, partTwoSum);
+                "%nanswer to part two: %d // part two asked to include the numbers written in wordsdaydayyyy too%n", partOneSum, partTwoSum);
     }
     private static String toDigits(String line) {
         return line.replaceAll("one", "o1e")
