@@ -15,10 +15,6 @@ public class Main2 {
 
     }
 
-    public static String spotDigits(String line) {
-        return line.replaceAll("\\d", "d");
-    }
-
     public static String spotAsterisks(String line) {
         return line.replaceAll("\\*", "a");
     }
@@ -40,7 +36,7 @@ public class Main2 {
             while (a.find()) {
                 ArrayList<Integer> numbers = new ArrayList<>();
                 int indexOfA = currentLine.indexOf("a");
-                if (indexOfA > 0 && spotDigits(currentLine).charAt(indexOfA - 1) == 'd') {
+                if (indexOfA > 0 && String.valueOf(currentLine.charAt(indexOfA - 1)).matches("\\d")) {
                     Matcher digit = Pattern.compile("\\d+").matcher(currentLine);
                     while (digit.find()) {
                         int digitIndex = currentLine.indexOf(digit.group());
@@ -53,7 +49,7 @@ public class Main2 {
                             currentLine = currentLine.replaceFirst(String.valueOf(digit.group().charAt(j)), "d");
                     }
                 }
-                if (indexOfA < currentLine.length() - 1 && spotDigits(currentLine).charAt(indexOfA + 1) == 'd') {
+                if (indexOfA < currentLine.length() - 1 && String.valueOf(currentLine.charAt(indexOfA + 1)).matches("\\d")) {
                     Matcher digit = Pattern.compile("\\d+").matcher(currentLine);
                     while (digit.find()) {
                         int digitIndex = currentLine.indexOf(digit.group());
@@ -67,7 +63,7 @@ public class Main2 {
                 }
                 if (i > 0 && modifiedLines.get(i - 1).charAt(indexOfA) == '.') {
                     String prevLine = modifiedLines.get(i - 1);
-                    if (indexOfA > 0 && spotDigits(prevLine).charAt(indexOfA - 1) == 'd') {
+                    if (indexOfA > 0 && String.valueOf(prevLine.charAt(indexOfA - 1)).matches("\\d")) {
                         Matcher digit = Pattern.compile("\\d+").matcher(prevLine);
                         while (digit.find()) {
                             int digitIndex = prevLine.indexOf(digit.group());
@@ -80,7 +76,7 @@ public class Main2 {
                                 prevLine = prevLine.replaceFirst(String.valueOf(digit.group().charAt(j)), "d");
                         }
                     }
-                    if (indexOfA < prevLine.length() - 1 && spotDigits(prevLine).charAt(indexOfA + 1) == 'd') {
+                    if (indexOfA < prevLine.length() - 1 && String.valueOf(prevLine.charAt(indexOfA + 1)).matches("\\d")) {
                         Matcher digit = Pattern.compile("\\d+").matcher(prevLine);
                         while (digit.find()) {
                             int digitIndex = prevLine.indexOf(digit.group());
@@ -95,7 +91,7 @@ public class Main2 {
                 }
                 if (i < modifiedLines.size() - 1 && modifiedLines.get(i + 1).charAt(indexOfA) == '.') {
                     String nxtLine = modifiedLines.get(i + 1);
-                    if (indexOfA > 0 && spotDigits(nxtLine).charAt(indexOfA - 1) == 'd') {
+                    if (indexOfA > 0 && String.valueOf(nxtLine.charAt(indexOfA - 1)).matches("\\d")) {
                         Matcher digit = Pattern.compile("\\d+").matcher(nxtLine);
                         while (digit.find()) {
                             int digitIndex = nxtLine.indexOf(digit.group());
@@ -108,7 +104,7 @@ public class Main2 {
                                 nxtLine = nxtLine.replaceFirst(String.valueOf(digit.group().charAt(j)), "d");
                         }
                     }
-                    if (indexOfA < nxtLine.length() - 1 && spotDigits(nxtLine).charAt(indexOfA + 1) == 'd') {
+                    if (indexOfA < nxtLine.length() - 1 && String.valueOf(nxtLine.charAt(indexOfA + 1)).matches("\\d")) {
                         Matcher digit = Pattern.compile("\\d+").matcher(nxtLine);
                         while (digit.find()) {
                             int digitIndex = nxtLine.indexOf(digit.group());
