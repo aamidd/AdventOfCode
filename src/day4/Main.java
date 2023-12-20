@@ -11,12 +11,12 @@ public class Main {
     public static void main(String[] args) throws IOException {
         int sum =
                 Files.lines(Paths.get("day4input"))
-                        .mapToInt(Main::worthOfCard)
+                        .mapToInt(Main::numberOfMatches)
                         .sum();
         System.out.println(sum);
     }
 
-    private static int worthOfCard(String line) {
+    private static int numberOfMatches(String line) {
         String card = line.substring(line.indexOf(":") + 2);
         ArrayList<String> ownedNumbers = new ArrayList<>(List.of(card.split("\\|")[1].split(" ")));
 
