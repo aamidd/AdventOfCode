@@ -20,12 +20,12 @@ public class Main {
         String card = line.substring(line.indexOf(":") + 2);
         ArrayList<String> ownedNumbers = new ArrayList<>(List.of(card.split("\\|")[1].split(" ")));
 
-        long streamCount =  Arrays.stream(card.split("\\|")[0].split(" "))
+        long count = Arrays.stream(card.split("\\|")[0].split(" "))
                 .filter(number -> !number.isEmpty())
                 .filter(ownedNumbers::contains)
                 .count();
-        if (streamCount == 0)
+        if (count == 0)
             return 0;
-        return (int) Math.pow(2, streamCount - 1);
+        return (int) Math.pow(2, count - 1);
     }
 }
