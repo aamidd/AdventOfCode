@@ -20,8 +20,6 @@ public class Main {
 
     private static int cardsWorth(String line) {
         long count = numberOfMatches(line);
-        if (count == 0)
-            return 0;
         return (int) Math.pow(2, count - 1);
     }
 
