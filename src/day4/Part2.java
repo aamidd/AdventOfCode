@@ -16,9 +16,8 @@ public class Part2 {
                     .map(Part2::parseList)
                     .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
             int sum = map.size();
-            for (int i = map.size(); i >= 1; i--) {
+            for (int i = map.size(); i >= 1; i--)
                 sum += calcScore(i, map);
-            }
             System.out.println(sum);
         } catch (IOException e) {
             throw new RuntimeException(e);
