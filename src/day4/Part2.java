@@ -39,9 +39,8 @@ public class Part2 {
         int sum = 0;
         if (index + map.get(index) > map.size())
             map.put(index, map.size() - index);
-        for (int i = startOfIteration; i >= index; i--) {
+        for (int i = startOfIteration; i >= index; i--)
             sum += map.get(i);
-        }
         map.put(index, sum);
         return sum;
     }
