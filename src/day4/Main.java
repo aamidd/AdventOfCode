@@ -10,12 +10,15 @@ import java.util.TreeMap;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
-        int sum =
-                Files.lines(Paths.get("day4input"))
-                        .mapToInt(Main::cardsWorth)
-                        .sum();
-        System.out.println(sum);
+    public static void main(String[] args) {
+        try {
+            int sum = Files.lines(Paths.get("day4input"))
+                    .mapToInt(Main::cardsWorth)
+                    .sum();
+            System.out.println(sum);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static int cardsWorth(String line) {

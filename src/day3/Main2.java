@@ -9,10 +9,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Main2 {
-    public static void main(String[] args) throws IOException {
-        List<String> lines = Files.readAllLines(Paths.get("day3input"));
-        System.out.println(sumGearRatios(lines));
-
+    public static void main(String[] args) {
+        try {
+            List<String> lines = Files.readAllLines(Paths.get("day3input"));
+            System.out.println(sumGearRatios(lines));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static String spotAsterisks(String line) {

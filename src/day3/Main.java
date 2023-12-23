@@ -9,10 +9,13 @@ import java.util.regex.Pattern;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
-        List<String> lines = Files.readAllLines(Paths.get("day3input"));
-
-        System.out.println(sumPartNumbers(lines.stream().map(Main::spotSymbols).toList()));
+    public static void main(String[] args) {
+        try {
+            List<String> lines = Files.readAllLines(Paths.get("day3input"));
+            System.out.println(sumPartNumbers(lines.stream().map(Main::spotSymbols).toList()));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static String spotSymbols(String line) {

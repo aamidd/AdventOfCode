@@ -7,20 +7,24 @@ import java.nio.file.Paths;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
-        Path input = Paths.get("input");
-        int partOneSum =
-                Files.lines(input)
-                        .mapToInt(Main::firstAndLast)
-                        .sum();
-        int partTwoSum =
-                Files.lines(input)
-                        .map(Main::toDigits)
-                        .mapToInt(Main::firstAndLast)
-                        .sum();
+    public static void main(String[] args) {
+        try {
+            Path input = Paths.get("input");
+            int partOneSum =
+                    Files.lines(input)
+                            .mapToInt(Main::firstAndLast)
+                            .sum();
+            int partTwoSum =
+                    Files.lines(input)
+                            .map(Main::toDigits)
+                            .mapToInt(Main::firstAndLast)
+                            .sum();
 
-        System.out.printf("answer to part one: %d // part one only asked to give the first and last occurrence of digits " +
-                "%nanswer to part two: %d // part two asked to include the numbers written in wordsdaydayyyy too%n", partOneSum, partTwoSum);
+            System.out.printf("answer to part one: %d // part one only asked to give the first and last occurrence of digits " +
+                    "%nanswer to part two: %d // part two asked to include the numbers written in wordsdaydayyyy too%n", partOneSum, partTwoSum);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
     private static String toDigits(String line) {
         return line.replaceAll("one", "o1e")
